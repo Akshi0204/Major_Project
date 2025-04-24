@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome {{ user.name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8d7da; /* Light background */
+        }
+
+        .navbar {
+            background-color: #c0392b !important; /* Red navbar background */
+            border-bottom: 2px solid #c0392b; /* Red border bottom */
+        }
+
+        .navbar-brand {
+            color: #fff !important; /* White navbar brand color */
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important; /* White nav link color */
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background-color: #c0392b; /* Red nav link background */
+            border: 2px solid #c0392b; /* Red nav link border */
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #a52c23; /* Darker red on hover */
+            border-color: #a52c23; /* Darker red on hover */
+        }
+
+        .container {
+            padding-top: 50px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            background-color: #ffffff; /* White card background */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: #c0392b; /* Red card header background */
+            color: #fff; /* White card header text color */
+            font-weight: bold;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .dashboard-icon {
+            font-size: 40px;
+            color: #c0392b; /* Red icon color */
+            margin-right: 10px;
+        }
+
+        .dashboard-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-subtitle {
+            font-size: 16px;
+            color: #6c757d; /* Gray subtitle color */
+        }
+
+        .btn-primary {
+            background-color: #c0392b; /* Red button background */
+            border-color: #c0392b; /* Red button border */
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #a52c23; /* Darker red on hover */
+            border-color: #a52c23; /* Darker red on hover */
+        }
+
+        .reports-container {
+            border: 5px solid #c0392b; /* Red border for reports section */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid justify-content-center">
+            <a class="navbar-brand" href="#">Welcome {{ user.name }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="changePassword">Change Password</a>
+                    <a class="nav-link" href="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- Second Row: Search Data | Plot Data | View Reports -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Search Data</h5>
+                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-search dashboard-icon"></i>
+                        <div>
+                            <h4 class="card-title dashboard-title">Search Data</h4>
+                            <p class="card-text dashboard-subtitle">Search for specific data</p>
+                            <a href="adminHome/datasearch" class="btn btn-primary">Search Data</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Plot Data</h5>
+                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-chart-line dashboard-icon"></i>
+                        <div>
+                            <h4 class="card-title dashboard-title">Plot Data</h4>
+                            <p class="card-text dashboard-subtitle">Visualize data trends</p>
+                            <a href="adminHome/plot" class="btn btn-primary">Plot Data</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Download Data</h5>
+                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-file-download dashboard-icon"></i>
+                        <div>
+                            <h4 class="card-title dashboard-title">Download Data</h4>
+                            <p class="card-text dashboard-subtitle">Download the uploaded data</p>
+                            <a href="adminHome/download" class="btn btn-primary">Download Data</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Chat Bot</h5>
+                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-comments dashboard-icon"></i>
+                        <div>
+                            <h4 class="card-title dashboard-title">Chat Bot</h4>
+                            <p class="card-text dashboard-subtitle">Ask Anything</p>
+                            <a href="adminHome/main" class="btn btn-primary">Chat Bot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reports-container">
+            <h4>Reports:</h4>
+            <img src="{{report.report.url}}" alt="User Image" style="width: 400px; height: auto;"/>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-7gnLt6PZK34sokmnRd7HpaDBTlkFZRx4xrcDwE3X/LeX4fDv2ym3LU1NaWBftORv" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
